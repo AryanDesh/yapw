@@ -1,12 +1,16 @@
-import { Button } from './components/ui/button'
+// src/App.tsx
+import React from "react";
+import AnimatedLogo from "@/components/AnimatedLogo"; // Import the AnimatedLogo component
 
-function App() {
-
+const App: React.FC = () => {
   return (
-    <div className=''>
-     <Button>Submit</Button>
-    </div>
-  )
-}
+    <div className="body">
+      <AnimatedLogo />
+      <div className="delay-1500">
 
-export default App
+      </div>
+    </div>
+  );
+};
+
+export default App;
