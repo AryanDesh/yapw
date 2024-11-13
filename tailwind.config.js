@@ -50,7 +50,10 @@ module.exports = {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			}
-  		}
+  		},
+		width: {
+		'80vw': '80vw', // Custom class for 80vw width
+		},
   	}
   },
   plugins: [
