@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import AnimatedLogo from "@/components/AnimatedLogo"; // Import the AnimatedLogo component
-import Topbar from "./components/Topbar";
 import Title from "./components/Title";
-import CenteredScrollImage from "./components/ProjectImages";
-
+import CenteredScrollComponent from "./components/ProjectImages"
+import AboutMe from "./components/AboutMe"
 const App: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -20,14 +19,12 @@ const App: React.FC = () => {
   }
 
   return (
-    <div>
-        <Title/>
-        <div className="parallax__foreground-back">
-        <Topbar />
-        </div> 
-        <div className="parallax_rays">
-          < CenteredScrollImage/>
-        </div>
+    <div className="flex">
+      <Title />
+
+      <div className="w-[65%] ml-auto relative overflow-y-auto">
+        <CenteredScrollComponent />
+      </div>
     </div>
   );
 };

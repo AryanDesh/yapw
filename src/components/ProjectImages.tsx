@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import bmbi from '../assets/BMBI.svg';
 import bgImage from '../assets/background.webp';
-import reactimage from '../assets/react.svg';
-import './ProjectImages.scss'
+import reactImage from '../assets/react.svg';
+import AboutMe from './AboutMe';
+
 type Section = {
   id: string;
   text: string;
@@ -11,13 +12,14 @@ type Section = {
 
 const CenteredScrollComponent: React.FC = () => {
   const [currentSectionIndex, setCurrentSectionIndex] = useState<number>(0);
+  const [isImageVisible, setIsImageVisible] = useState<boolean>(false);
   const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   const sections: Section[] = useMemo(
     () => [
       { id: 'section1', text: 'Innovative', imageUrl: bgImage },
       { id: 'section2', text: 'Creative', imageUrl: bmbi },
-      { id: 'section3', text: 'Inspiring', imageUrl: reactimage },
+      { id: 'section3', text: 'Inspiring', imageUrl: reactImage },
     ],
     []
   );
@@ -49,42 +51,66 @@ const CenteredScrollComponent: React.FC = () => {
     return () => observer.disconnect();
   }, [sections]);
 
-  return (
-    <div className="relative min-h-screen">
-      {/* Fixed image container */}
-      <div className="fixed inset-0 flex items-center justify-center z-20 pointer-events-none overflow-hidden">
-        <div className="relative w-[400px] h-[400px] transform transition-transform duration-700 ease-in-out">
-          {/* Image */}
-          <img
-            src={sections[currentSectionIndex].imageUrl}
-            alt="Fixed central image"
-            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
-          />
-        </div>
-      </div>
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setIsImageVisible(true);
+      } else {
+        setIsImageVisible(false);
+      }
+    };
 
-      {/* Scrollable content */}
-      <div className="relative z-3">
-        {sections.map((section, index) => (
-          <div
-            key={section.id}
-            id={section.id}
-            ref={(el) => (sectionRefs.current[section.id] = el)}
-            className="h-screen flex items-center justify-center bg-gray-100"
-          >
-            <div className="section-text-container">
-              <h2
-                className={`section-text ${
-                  currentSectionIndex === index ? 'active' : ''
-                }`}
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <>
+      <div className="w-full overflow-scroll">
+        <AboutMe />
+      </div>
+      <div className="flex">
+        {/* Scrollable content */}
+        <div className="w-[50%] ml-auto relative">
+          <div className="relative z-20">
+            {sections.map((section, index) => (
+              <div
+                key={section.id}
+                id={section.id}
+                ref={(el) => (sectionRefs.current[section.id] = el)}
+                className="h-screen flex items-center justify-center"
               >
-                {section.text}
-              </h2>
+                <div className="text-center">
+                  <h2
+                    className={`text-3xl font-semibold ${
+                      currentSectionIndex === index
+                        ? 'text-gray-800'
+                        : 'text-gray-400'
+                    }`}
+                  >
+                    {section.text}
+                  </h2>
+                </div>
+              </div>
+            ))}
+          </div>
+          {/* Fixed Image */}
+          <div className="fixed top-0 right-[12.5%] w-[25%] h-screen flex items-center justify-center z-10">
+            <div
+              className={`w-[250px] h-[250px] transition-opacity duration-500 ease-in-out ${
+                isImageVisible ? 'opacity-100 visible' : 'opacity-0 invisible'
+              }`}
+            >
+              <img
+                src={sections[currentSectionIndex].imageUrl}
+                alt="Fixed central image"
+                className="w-full h-full object-cover rounded-lg shadow-lg transition-transform duration-500 ease-in-out"
+              />
             </div>
           </div>
-        ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
