@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import bmbi from '../assets/BMBI.svg';
 import bgImage from '../assets/background.webp';
 import reactImage from '../assets/react.svg';
-import AboutMe from './AboutMe';
 
 type Section = {
   id: string;
@@ -53,8 +52,11 @@ const CenteredScrollComponent: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setIsImageVisible(true);
+      if (window.scrollY > 400 && sectionRefs.current.values !== null) {
+        if(window.innerWidth >= 768)
+            setIsImageVisible(true);
+        else if(window.scrollY > 800)
+            setIsImageVisible(true);
       } else {
         setIsImageVisible(false);
       }
@@ -66,12 +68,9 @@ const CenteredScrollComponent: React.FC = () => {
 
   return (
     <>
-      <div className="w-full overflow-scroll">
-        <AboutMe />
-      </div>
       <div className="flex">
         {/* Scrollable content */}
-        <div className="w-[50%] ml-auto relative">
+        <div className="md:w-1/2 w-full ml-auto relative">
           <div className="relative z-20">
             {sections.map((section, index) => (
               <div
