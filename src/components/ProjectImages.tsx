@@ -94,10 +94,10 @@ const CenteredScrollComponent: React.FC = () => {
 
   return (
     <>
-      <div className="relative">
+      <div className="relative flex w-full items-center justify-center">
         {/* Parallax Background */}
         <div
-          className="absolute top-0 left-0 w-full h-full bg-cover bg-fixed"
+          className="absolute top-0 w-full h-full bg-cover bg-fixed"
           style={{
             // backgroundImage: `url(${rtchat})`,
             transform: `translateY(${parallaxOffset}px)`,
@@ -112,13 +112,13 @@ const CenteredScrollComponent: React.FC = () => {
                 key={section.id}
                 id={section.id}
                 ref={(el) => (sectionRefs.current[section.id] = el)}
-                className="h-screen flex items-center justify-center"
+                className="h-screen flex"
               ></div>
             ))}
           </div>
           {/* Fixed Image */}
           <div
-            className={`fixed top-0 right-[20%] lg:right-[12.5%] lg:w-[30%] h-screen flex flex-col items-center justify-center z-10 ${
+            className={`fixed top-0 w-fit right-[2%] lg:right-[12.5%] lg:w-[30%] h-screen flex flex-col items-center justify-center z-10 ${
               isImageVisible ? 'opacity-100 visible' : 'opacity-0 invisible'
             }`}
           >
@@ -138,7 +138,7 @@ const CenteredScrollComponent: React.FC = () => {
 
             {/* Project Description */}
             <p
-              className="text-md text-left px-4 bg-clip-text text-[#FFF8E7]"
+              className="text-lg w-4/5 lg:w-full text-left px-4 bg-clip-text text-[#FFF8E7]"
             >
               {sections[currentSectionIndex].text}
             </p>
