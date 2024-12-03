@@ -9,6 +9,7 @@ type Section = {
   text: string;
   imageUrl: string;
   techStack: string[];
+  github: string;
 };
 
 const CenteredScrollComponent: React.FC = () => {
@@ -25,30 +26,35 @@ const CenteredScrollComponent: React.FC = () => {
         text: 'WebCraft is a multi-tenant SaaS website builder empowering agencies to create, manage, and monetize products with customizable templates and automation.',
         imageUrl: webcraft,
         techStack: ['Next.js', 'Clerk Auth', 'Shadcn/ui','Prisma', 'MySQL', 'Razorpay', 'TypeScript', 'UploadThings'],
+        github: "https://github.com/AryanDesh/WebCraft-nextapp"
       },
       {
         id: 'LedgerFlow',
         text: 'LedgerFlow is a seamless user-merchant payment app enabling secure P2P transfers, bank integrations, real-time transactions, and comprehensive financial management.',
         imageUrl: ledger,
         techStack: ['Next.js', 'OAuth', 'TurboRepo', 'Prisma','PostgreSQL', 'TypeScript','Express', 'Webhooks'],
+        github: "https://github.com/AryanDesh/LedgerFlow"
       },
       {
         id: 'Psyche-Care',
         text: 'PsycheCare revolutionizes therapy access by combining advanced technology with empathy, offering personalized mental health solutions through an intuitive platform.',
         imageUrl: pc,
         techStack: ['Next.js', 'Clerk Auth', 'Shadcn/ui', 'Razorpay', 'TypeScript', 'UploadThings'],
+        github: "https://github.com/AryanDesh/GenAI"
       },
       {
         id: 'Ink & Insight',
         text: 'Ink and Insight is a creative platform empowering writers to showcase their work, collaborate, and connect with a vibrant literary community.',
         imageUrl: blog,
         techStack: ['Next.js', 'Clerk Auth', 'Shadcn/ui', 'Razorpay', 'TypeScript', 'UploadThings'],
+        github: "https://github.com/AryanDesh/Blogger"
       },
       {
         id: 'RTChat',
         text: 'RTChat is a real-time chat application offering seamless communication with WebSockets, scalable architecture, rich messaging features, and secure authentication.',
         imageUrl: rtchat,
         techStack: ['Next.js', 'Clerk Auth', 'Shadcn/ui', 'Razorpay', 'TypeScript', 'UploadThings'],
+        github: "https://github.com/AryanDesh/video-chat-solid"
       },
     ],
     []
@@ -130,11 +136,13 @@ const CenteredScrollComponent: React.FC = () => {
             </h1>
 
             {/* Image */}
+            <a href={sections[currentSectionIndex].github}>
             <img
               src={sections[currentSectionIndex].imageUrl}
               alt="Fixed central image"
               className="shadow-2xl shadow-black h-[200px] w-[400px] rounded-lg mb-6 z-20"
-            />
+              />
+            </a>
 
             {/* Project Description */}
             <p
