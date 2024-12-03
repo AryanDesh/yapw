@@ -1,9 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import webcraft from '@/assets/webcraft.png';
-import bmbi from '../assets/BMBI.svg';
 import pc from '@/assets/psychecare.png';
-import bgImage from '../assets/background.webp';
-// import coffee from '../assets/coffee.jpg' 
 import ledger from '@/assets/ledgerflow.png'
 import blog from '@/assets/blog.webp'
 import rtchat from '@/assets/rtchat.jpg'
