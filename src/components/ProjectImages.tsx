@@ -11,7 +11,6 @@ type Section = {
   techStack: string[];
   github: string;
 };
-
 const CenteredScrollComponent: React.FC = () => {
   const [currentSectionIndex, setCurrentSectionIndex] = useState<number>(0);
   const [isImageVisible, setIsImageVisible] = useState<boolean>(false);
@@ -23,7 +22,7 @@ const CenteredScrollComponent: React.FC = () => {
     () => [
       {
         id: 'WebCraft',
-        text: 'WebCraft is a multi-tenant SaaS website builder empowering agencies to create, manage, and monetize products with customizable templates and automation.',
+        text: 'WebCraft is a multi-tenant SaaS website builder empowering agencies to create, manage, and monetize products with customizable templates and automation. Drag and Drop WebsiteBuilder, Kanban Board, Razorpay integration, Agency Management',
         imageUrl: webcraft,
         techStack: ['Next.js', 'Clerk Auth', 'Shadcn/ui','Prisma', 'MySQL', 'Razorpay', 'TypeScript', 'UploadThings'],
         github: "https://github.com/AryanDesh/WebCraft-nextapp"
@@ -32,28 +31,28 @@ const CenteredScrollComponent: React.FC = () => {
         id: 'LedgerFlow',
         text: 'LedgerFlow is a seamless user-merchant payment app enabling secure P2P transfers, bank integrations, real-time transactions, and comprehensive financial management.',
         imageUrl: ledger,
-        techStack: ['Next.js', 'OAuth', 'TurboRepo', 'Prisma','PostgreSQL', 'TypeScript','Express', 'Webhooks'],
+        techStack: ['Next.js', 'TurboRepo', 'Prisma','PostgreSQL', 'TypeScript','Express', 'Webhooks'],
         github: "https://github.com/AryanDesh/LedgerFlow"
       },
       {
         id: 'Psyche-Care',
-        text: 'PsycheCare revolutionizes therapy access by combining advanced technology with empathy, offering personalized mental health solutions through an intuitive platform.',
+        text: 'PsycheCare revolutionizes therapy access by combining advanced technology with empathy, offering personalized mental health solutions through an intuitive platform. OpenAI integration, OAuth, Vector Embeddings, Similarity Searching.',
         imageUrl: pc,
-        techStack: ['Next.js', 'Clerk Auth', 'Shadcn/ui', 'Razorpay', 'TypeScript', 'UploadThings'],
+        techStack: ['OpenAI API', 'python', 'Javascript', 'React', 'MongoDB', 'SupaBase'],
         github: "https://github.com/AryanDesh/GenAI"
       },
       {
         id: 'Ink & Insight',
-        text: 'Ink and Insight is a creative platform empowering writers to showcase their work, collaborate, and connect with a vibrant literary community.',
+        text: 'Ink and Insight is a creative platform empowering writers to showcase their work, collaborate, and connect with a vibrant literary community. Blogging, Create and Manage Posts.',
         imageUrl: blog,
-        techStack: ['Next.js', 'Clerk Auth', 'Shadcn/ui', 'Razorpay', 'TypeScript', 'UploadThings'],
+        techStack: ['React','NodeJs', 'Prisma', 'PostgreSQL', 'Express', 'TypeScript'],
         github: "https://github.com/AryanDesh/Blogger"
       },
       {
         id: 'RTChat',
         text: 'RTChat is a real-time chat application offering seamless communication with WebSockets, scalable architecture, rich messaging features, and secure authentication.',
         imageUrl: rtchat,
-        techStack: ['Next.js', 'Clerk Auth', 'Shadcn/ui', 'Razorpay', 'TypeScript', 'UploadThings'],
+        techStack: ['SolidJs', 'MongoDB', 'NodeJs', 'Express','WebRTC', 'WebSockets'],
         github: "https://github.com/AryanDesh/video-chat-solid"
       },
     ],
