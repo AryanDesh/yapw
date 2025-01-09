@@ -13,7 +13,7 @@ const AboutMe: React.FC = () => {
           className="w-36 h-52 rounded-3xl object-cover "
         />
         <div className='font-mono text-[#FFF8E7] ml-2'>
-        Hello, I'm Aryan Deshmukh, a technology enthusiast with a strong foundation in modern web development, DevOps, and scalable backend architecture. I specialize in building complex backend applications. Always eager to tackle challenging problems and aim to deliver reliable, scalable, and impactful solutions.
+        Web Developer based in Pune Maharashtra, eager to solve real-world problems through technology. Open to hybrid or remote and on-site roles, focused on contributing to impactful projects while growing professionally.
         </div>
       </div>
     </div>
