@@ -14,8 +14,6 @@ type Section = {
 const CenteredScrollComponent: React.FC = () => {
   const [currentSectionIndex, setCurrentSectionIndex] = useState<number>(0);
   const [isImageVisible, setIsImageVisible] = useState<boolean>(false);
-  const [parallaxOffset, setParallaxOffset] = useState<number>(0);
-
   const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   const sections: Section[] = useMemo(
@@ -99,10 +97,6 @@ const CenteredScrollComponent: React.FC = () => {
         {/* Parallax Background */}
         <div
           className="absolute top-0 w-full h-full bg-cover bg-fixed"
-          style={{
-            // backgroundImage: `url(${rtchat})`,
-            transform: `translateY(${parallaxOffset}px)`,
-          }}
         ></div>
 
         <div className="relative z-10 flex">
