@@ -87,10 +87,6 @@ const CenteredScrollComponent: React.FC = () => {
       } else {
         setIsImageVisible(false);
       }
-
-      // Parallax calculation
-      const offset = window.scrollY * 0.5; // Adjust multiplier for stronger/weaker parallax effect
-      setParallaxOffset(offset);
     };
 
     window.addEventListener('scroll', handleScroll);

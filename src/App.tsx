@@ -78,7 +78,7 @@ const App: React.FC = () => {
       >
         <Title onScrollToProjects={handleScrollToProjects} onScrollToProfile={handleScrollToProfile}/>
         <div
-          className="md:w-[60%] relative overflow-y-auto bg-[#002a32]">
+          className="md:w-[60%] relative bg-[#002a32]">
             <div ref={scrollProfile}>
               <AboutMe />
             </div>
